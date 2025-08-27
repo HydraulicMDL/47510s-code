@@ -7,6 +7,7 @@
  * "I was pressed!" and nothing.
  */
 void on_center_button() {
+	//hrllo
 	static bool pressed = false;
 	pressed = !pressed;
 	if (pressed) {
