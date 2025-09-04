@@ -68,10 +68,10 @@ void opcontrol() {
 		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);  // Prints status of the emulated screen LCDs
 
 		// Drivetrain
-		int dirLeft = controller.get_analog(ANALOG_LEFT_Y);
-		int dirRight = controller.get_analog(ANALOG_RIGHT_Y);
-		left.move(dirLeft);                      
-		right.move(dirRight);                  
+		int fwd = controller.get_analog(ANALOG_LEFT_Y);
+		int turn = controller.get_analog(ANALOG_RIGHT_X);
+		left.move(fwd + turn);                      
+		right.move(fwd - turn);                  
 		pros::delay(20);                            
 	}
 }
